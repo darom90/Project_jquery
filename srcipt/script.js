@@ -20,10 +20,8 @@ function getRecipes(datas) {
     datas.recipes.forEach(recs => {
 
         getIngrediant(recs); // get all ingrediant
-        
+
     });
-
-
 }
 
 function getIngrediant(recipe) {
@@ -31,8 +29,6 @@ function getIngrediant(recipe) {
         showIngrediantTable(element);
     })
 }
-
-
 var showIngrediantTable = (element) => {
 
     var ingrediant = "";
