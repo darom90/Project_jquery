@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +8,36 @@
     <title>String Text</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <select id="choose_me_baby" class="form-control">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <select id="recipe" class="form-control">
                     <option value="" disabled selected>Choose Recipe</option>
-                    <option value="0">Nom Pom</option>
-                    <option value="1">Avocado</option>
-                    <option value="2">Chocolate</option>
+                    <option value="1">Nom Pom</option>
+                    <option value="2">Avocado Shake(Toek kaLok)</option>
+                    <option value="3">Chocolate</option>
                 </select>
 
             </div>
-            <div class="col-4"></div>
+            <div class="col-6"></div>
         </div>
     </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <table class="table table-borderless" id="result"></table>
-                    </div>
+
+                <div class="card-body">
+                    <table id="result"></table>
                 </div>
+
             </div>
         </div>
     </div>
     <script src="srcipt/jquery-3.4.1.min.js"></script>
     <script src="srcipt/script.js"></script>
 </body>
+
 </html>
