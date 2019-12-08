@@ -35,6 +35,17 @@ function data() {
                 }
             });
             $('#results').html(result);
+
+            //get instruction
+            var instruction = "";
+            datas.recipes.forEach(element => {
+                if(element.nbGuests == 1){
+                    instruction +=` 
+                        ${element.instructions}  
+                    `;
+                }
+            });
+            $('#instruction').html(instruction);
             var ingrediant = "";
             datas.recipes.forEach(element => {
                 element.ingredients.forEach(item => {
@@ -72,6 +83,16 @@ function datas() {
                 }
             });
             $('#results').html(result);
+            // get instuction
+            var instruction = "";
+            datas.recipes.forEach(element => {
+                if(element.nbGuests == 4){
+                    instruction +=`
+                        ${element.instructions}
+                    `;
+                }
+            });
+            $('#instruction').html(instruction);
             var ingrediant = "";
             datas.recipes.forEach(element => {
                 element.ingredients.forEach(item => {
@@ -92,3 +113,4 @@ function datas() {
         }
     });
 }
+
