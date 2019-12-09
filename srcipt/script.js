@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
+    $('#hide').hide();
     $('#recipe').on('change', function () {
+        $('#hide').show();
         var recipes = $('#recipe').val();
         chooseRecipe(recipes);
     });
@@ -24,13 +26,13 @@ function data() {
         url: url,
         success: function (datas) {
             var result = "";
-           
+
             datas.recipes.forEach(element => {
 
                 if (element.id == 0) {
                     result += `
                     ${element.name}
-                         <img src="${element.iconUrl}" width="90" class="img-fluid circle-rounded">
+                         <img src="${element.iconUrl}" width="100" class="img-fluid circle-rounded">
                     `;
                 }
             });
@@ -39,9 +41,10 @@ function data() {
             //get instruction
             var instruction = "";
             datas.recipes.forEach(element => {
-                if(element.nbGuests == 1){
-                    instruction +=` 
-                        ${element.instructions}  
+                if (element.nbGuests == 1) {
+                    instruction += ` 
+                        ${element.instructions} 
+                        
                     `;
                 }
             });
@@ -86,8 +89,8 @@ function datas() {
             // get instuction
             var instruction = "";
             datas.recipes.forEach(element => {
-                if(element.nbGuests == 4){
-                    instruction +=`
+                if (element.nbGuests == 4) {
+                    instruction += `
                         ${element.instructions}
                     `;
                 }
@@ -113,4 +116,46 @@ function datas() {
         }
     });
 }
+
+// funtion for create increase number and decreas numbers
+$(document).ready(function () {
+    
+    $('#minus').on('click', function () {
+        var members = $('#member').val();
+        decreaseMember(members);
+    });
+    $('#add').on('click', function () {
+        var members = $('#member').val();
+        increaseMember(members);
+    });
+});
+
+function decreaseMember(minus) {
+    var member = parseInt(minus) - 1;
+    if (member >= 0) {
+        $('#member').val(member);
+        compute(member);
+    }
+}
+
+function increaseMember(add) {
+    var members = parseInt(add) + 1;
+    if (members <= 15) {
+        $('#member').val(members);
+        compute(members);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
