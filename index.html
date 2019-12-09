@@ -10,57 +10,25 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <div class="continer mt-5">
         <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <select id="recipe" class="form-control">
-                    <option value="" disabled selected>Choose Recipe</option>
-                    <option value="1">Avocado Shake(Toek kaLok)</option>
-                    <option value="2">Nom Pom</option>
-                    <option value="3">Chocolate</option>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <select name="" id="recipes" class="form-control">
+                    <option value="" disabled selected>Choose recipes</option>
                 </select>
             </div>
-            <div class="col-6"></div>
+            <div class="col-4"></div>
         </div>
     </div>
     <div class="container mt-5">
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6">
-                <div id="results"></div>
-            </div>
-            <div class="col-3"></div>
+            <div class="col-6" id="result"></div>
+            <div class="col-3" id="gredient"></div>
         </div>
     </div>
-    <div class="container mt-5">
-            <div class="row" id="hide">
-                <div class="col-5"></div>
-                <div class="col-3">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-primary" type="button" id="minus">&minus;</button>
-                        </div>
-                        <input type="number" class="form-control text-center" value="0" disabled id="member" max="15"
-                            min="0">
-                        <div class="input-group-append">
-                            <button class="btn btn-success" type="button" id="add">&#x2b;</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4"></div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-6" id="result"></div>
-                <div class="col-6" id="instruction"></div>
-            </div>
-        </div>
-    
-
-
-    
+   
     <script src="srcipt/jquery-3.4.1.min.js"></script>
     <script src="srcipt/script.js"></script>
 </body>
