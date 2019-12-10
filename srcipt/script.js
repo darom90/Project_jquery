@@ -16,7 +16,6 @@ function requestApi() {
 }
 var allData = [];
 function chooseRecipe(recip) {
-    console.log(recip);
     allData = recip;
     var option = "";
     recip.forEach(item => {
@@ -27,8 +26,7 @@ function chooseRecipe(recip) {
     });
     $('#recipes').append(option);
     Recipes(allData);
-    getIngredient(allData);
-    
+    Ingredient(allData);
 }
 
 var Recipes = (data) => {
@@ -50,6 +48,24 @@ var getRecipt = (getOut) => {
     $("#result").html(getOutput);
 }
 
+
+var Ingredient = (data) => {
+    data.forEach(element => {
+        $('#recipes').on('change', function () {
+            var result = $('#recipes').val();
+            if (element.id == result) {
+                get(element);
+            }
+        });
+    });
+}
+var get= (getOut) => {
+    var Ingredient = "";
+    Ingredient +=`
+        ${getOut.instructions}
+    `
+    $("#recip").html(Ingredient);
+}
 
 
 
