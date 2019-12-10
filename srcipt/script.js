@@ -35,6 +35,7 @@ var Recipes = (data) => {
             var result = $('#recipes').val();
             if (element.id == result) {
                 getRecipt(element);
+                getIngredient(element);
             }
         });
     });
@@ -67,6 +68,19 @@ var get= (getOut) => {
     $("#recip").html(Ingredient);
 }
 
+var getIngredient = (getdata) =>{
+    var display ="";
+        getdata.ingredients.forEach(element =>{
+            display +=`
+                <tr>
+                <td><img src="${element.iconUrl}" class="img-fluid rounded" width="100"><td>
+                    <td>${element.quantity}</td>
+                    <td>${element.name}</td>
+                </tr>
+            `;
+        }); 
+        $('#ingredient').html(display);
+}
 
 
 
