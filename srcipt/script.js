@@ -73,8 +73,9 @@ var getIngredient = (getdata) =>{
         getdata.ingredients.forEach(element =>{
             display +=`
                 <tr>
-                <td><img src="${element.iconUrl}" class="img-fluid rounded" width="100"><td>
+                <td><img src="${element.iconUrl}" class="img-fluid rounded" width="80"><td>
                     <td>${element.quantity}</td>
+                    <td>${element.unit[0]}</td>
                     <td>${element.name}</td>
                 </tr>
             `;
