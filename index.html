@@ -8,6 +8,14 @@
     <title>Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
+<style>
+    #ruler {
+        border-left: 2px solid;
+        height: 400px;
+        position: absolute;
+        left: 40%;
+    }
+</style>
 
 <body>
     <div class="continer mt-5">
@@ -28,14 +36,42 @@
             <div class="col-3"></div>
         </div>
     </div>
-    
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-6" id="ingredient"></div>
-                <div class="col-6" id="recip"></div>
+
+     <!-- html countnumber  -->
+    <div class="container mt-5">
+        <div class="row" id="show">
+            <div class="col-4"></div>
+            <h4 id="number" class="font-italic font-weight-bold"></h4>
+            <div class="col-4">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-primary" type="button" id="minus">&minus;</button>
+                    </div>
+                    <input type="number" class="form-control text-center" value="0" disabled id="member" max="15"
+                        min="0">
+                    <div class="input-group-append">
+                        <button class="btn btn-dark" type="button" id="add">&#x2b;</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+     <!-- htm ingredient and instruction -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-5">
+                <h4 id="ingredients" class="text-center text-success font-weight-bold"></h4>
+                <table class="table table-border" id="ingredient"></table>
+            </div>
+            <div class="col-2" id="ruler"></div>
+            <div class="col-5">
+                <h4 id="instructions" class="text-center text-success font-weight-bold"></h4>
+                <table class="table table-border" id="instruction"></table>
             </div>
         </div>
-    
+    </div>
     <script src="srcipt/jquery-3.4.1.min.js"></script>
     <script src="srcipt/script.js"></script>
 </body>
