@@ -5,9 +5,11 @@ function getUrl() {
 $(document).ready(function () {
     $('#ruler').hide();
     $('#show').hide();
+    $('#numbers').hide();
     requestApi();
 });
 
+// request api
 function requestApi() {
     $.ajax({
         dataType: 'json',
@@ -36,11 +38,13 @@ var Recipes = (data) => {
         $('#recipes').on('change', function () {
             $('#ruler').show();
             $('#show').show();
+            $('#numbers').show();
             var result = $('#recipes').val();
             if (element.id == result) {
                 getRecipt(element);
                 getIngredient(element);
                 getInstruction(element.instructions);
+                getGuest(element.nbGuests);
             }
         });
     });
@@ -48,10 +52,11 @@ var Recipes = (data) => {
 // get recipt
 var getRecipt = (getOut) => {
     var getOutput = "";
+    var getGuest = "";
     getOutput += `
         ${getOut.name}
-        <img src="${getOut.iconUrl}" class="img-fluid rounded" width="150">
-    `
+        <img src="${getOut.iconUrl}" class="img-fluid rounded" width="200">
+    `;
     $("#result").html(getOutput);
 }
 
@@ -75,7 +80,7 @@ var getIngredient = (getdata) => {
                 <tr>
                 <td><img src="${element.iconUrl}" class="img-fluid rounded" width="80"><td>
                     <td>${element.quantity}</td>
-                    <td>${element.unit[0]}</td>
+                    <td>${element.unit[0].toLowerCase()}</td>
                     <td>${element.name}</td>
                 </tr>
             `;
@@ -98,36 +103,55 @@ function getInstruction(insturc) {
     $('#instructions').html('Instruction');
 }
 
-$(document).ready(function () {
-    $('#minus').on('click', function () {
-        var members = $('#member').val();
-        decreaseMember(members);
+
+// code for add and munus number
+var getGuest = (outGust) => {
+    var guest = "";
+    guest +=`
+    <div class="container mt-5">
+    <div class="row" >
+        <div class="col-4"></div>
+        <h4 id="numbers" class="font-italic font-weight-bold"></h4>
+        <div class="col-4">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <button class="btn btn-primary" type="button" id="minus">&minus;</button>
+                </div>
+                <input type="number" class="form-control text-center" disabled id="member" max="15" 
+                    min="0" value="${outGust}">
+                    
+                <div class="input-group-append">
+                    <button class="btn btn-dark" type="button" id="add">&#x2b;</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div> 
+    `;
+    $('#number').html(guest);
+   
+
+    // add number
+    $('#add').on('click', function() {
+        var Number = $('#member').val();
+        var increaseNumber = parseInt(Number) + 1;
+        if(increaseNumber <= 15) {
+            $('#member').val(increaseNumber);
+        }
     });
-    $('#add').on('click', function () {
-        var members = $('#member').val();
-        increaseMember(members);
+
+// minus number
+    $('#minus').on('click', function() {
+        var Number = $('#member').val();
+        var decreaseNumber = parseInt(Number) - 1;
+        if(decreaseNumber >=0) {
+            $('#member').val(decreaseNumber);
+        }
     });
-});
-$('#number').html('Number Of Person');
-// ninus number
-function decreaseMember(minus) {
-    var member = parseInt(minus) - 1;
-    if (member >= 0) {
-        $('#member').val(member);
-        compute(member);
-    }
+
+   
 }
-
-// increment number
-function increaseMember(add) {
-    var members = parseInt(add) + 1;
-    if (members <= 15) {
-        $('#member').val(members);
-        compute(members);
-    }
-}
-
-
 
 
 
