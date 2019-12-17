@@ -7,17 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Project</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
     #ruler {
         border-left: 2px solid;
-        height: 400px;
+        height: 300px;
         position: absolute;
         left: 43%;
+    }
+
+    nav {
+        background: #25bfda;
+    }
+
+    footer {
+        background: #6b9491;
+    }
+    body{
+        background:#ade3b5;
     }
 </style>
 
 <body>
+    <nav class="navbar navbar-expand-sm  navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/a.jpg" alt="logo" style="width:100px;border-radius: 50%;">
+        </a>
+    </nav>
+    <hr>
+    <h2 class="text-center font-weight-bold font-italic text-success">Khmer Food and Khmer Drink </h2>
     <div class="continer mt-5">
         <div class="row">
             <div class="col-4"></div>
@@ -37,12 +58,12 @@
         </div>
     </div>
 
-     <!-- html count number  -->
-   <div id="number"></div>
-   <div id="numbers"></div>
+    <!-- html count number  -->
+    <div id="number"></div>
+    <div id="numbers"></div>
 
-    
-     <!-- htm ingredient and instruction -->
+
+    <!-- htm ingredient and instruction -->
     <div class="container mt-5">
         <div class="row">
             <div class="col-5">
@@ -56,6 +77,40 @@
             </div>
         </div>
     </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="img/a.jpg" alt="card-img" class="card-img-top">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="img/a.jpg" alt="card-img" class="card-img-top">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <img src="img/a.jpg" alt="card-img" class="card-img-top">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="img/a.jpg" alt="card-img" class="card-img-top">
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
     <script src="srcipt/jquery-3.4.1.min.js"></script>
     <script src="srcipt/script.js"></script>
 </body>
