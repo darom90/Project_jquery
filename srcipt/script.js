@@ -97,8 +97,15 @@ function getInstruction(insturc) {
     var get = insturc.split('<step>');
     for (let i = 1; i < get.length; i++) {
         result += `
-            <h5 class="text-secondary">Step:${i}</h5>
-            <p>${get[i]}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <h5 class="text-secondary">Step:${i}</h5>
+                <p>${get[i]}</p>
+                </div>
+            </div>
+        </div>
+           
         `;
     }
     $('#instruction').html(result);
@@ -110,7 +117,10 @@ function numberOfPerson(Guests) {
     const{nbGuests} = Guests;
     var result = "";
     result += `
-    <div class="col-4"></div>
+    <div class="container mb-5">
+        <div class="row">
+        <div class="col-4"></div>
+    <h2 class="font-italic font-weight-bold">Number Of Person</h2>
     <div class="col-4">
         <div class="input-group">
             <div class="input-group-prepend">
@@ -125,6 +135,9 @@ function numberOfPerson(Guests) {
         </div>
     </div>
     <div class="col-4"></div>
+        </div>
+    </div>
+    
 `;
 
 $("#number").html(result);
