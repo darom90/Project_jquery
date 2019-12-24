@@ -57,7 +57,7 @@ var getRecipt = (getOut) => {
     // var getGuest = "";
     getOutput += `
         ${getOut.name}
-        <img src="${getOut.iconUrl}" class="img-fluid rounded" width="200">
+        <img src="${getOut.iconUrl}" class="img-thumbnail rounded" width="200">
     `;
     $("#result").html(getOutput);
 }
@@ -81,9 +81,9 @@ var getIngredient = (getdata) => {
         display += `
                 <tr>
                 <td><img src="${element.iconUrl}" class="img-fluid rounded" width="80"><td>
-                    <td>${element.quantity}</td>
-                    <td>${element.unit[0].toLowerCase()}</td>
-                    <td>${element.name}</td>
+                    <td style="font-family: 'Anton', sans-serif;">${element.quantity}</td>
+                    <td style="font-family: 'Anton', sans-serif;">${element.unit[0].toLowerCase()}</td>
+                    <td style="font-family: 'Anton', sans-serif;">${element.name}</td>
                 </tr>
             `;
     });
@@ -100,8 +100,8 @@ function getInstruction(insturc) {
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                <h5 class="text-secondary">Step:${i}</h5>
-                <p>${get[i]}</p>
+                <h5 class="text-primary" style="font-size:20px;">Step:${i}</h5>
+                <p style="font-family: 'Anton', sans-serif;">${get[i]}</p>
                 </div>
             </div>
         </div>
