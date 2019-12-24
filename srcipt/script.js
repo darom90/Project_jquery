@@ -117,6 +117,7 @@ function numberOfPerson(Guests) {
     const{nbGuests} = Guests;
     var result = "";
     result += `
+    </br></br>
     <div class="container mb-5">
         <div class="row">
         <div class="col-4"></div>
@@ -130,7 +131,7 @@ function numberOfPerson(Guests) {
             <input type="text" id="input" style="width:115px" class="text-center" value="${nbGuests}" disabled>
             <div class="input-group-prepend">
                 <button type="button" id="add"
-                    class="btn btn-success">&nbsp&nbsp&nbsp&nbsp+&nbsp&nbsp&nbsp&nbsp</button>
+                    class="btn btn-dark">&nbsp&nbsp&nbsp&nbsp+&nbsp&nbsp&nbsp&nbsp</button>
             </div>
         </div>
     </div>
